@@ -16,43 +16,43 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
+      padding: 0.5rem 1rem;
       background-color: white;
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
     header h1 {
       color: #c2185b;
+      font-size: 1.4rem;
     }
     nav a {
-      margin: 0 1rem;
+      margin: 0 0.5rem;
       color: #c2185b;
       text-decoration: none;
       font-weight: bold;
       cursor: pointer;
+      font-size: 0.9rem;
     }
     .hero {
       display: flex;
       align-items: center;
-      justify-content: space-around;
-      padding: 2rem;
+      justify-content: center;
+      padding: 1rem;
       background: #ffe4ec;
       border-bottom: 8px solid #ffccd5;
-      flex-wrap: wrap;
-    }
-    .hero-text {
-      max-width: 500px;
+      flex-direction: column;
+      text-align: center;
     }
     .hero-text h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: #c2185b;
     }
     .btn {
       background-color: #c2185b;
       color: white;
-      padding: 0.8rem 1.5rem;
+      padding: 0.6rem 1.2rem;
       border: none;
       border-radius: 30px;
-      font-size: 1rem;
+      font-size: 0.9rem;
       cursor: pointer;
       margin-top: 1rem;
       transition: background 0.3s;
@@ -61,25 +61,26 @@
       background-color: #a3154c;
     }
     .hero img {
-      width: 300px;
+      width: 80%;
+      max-width: 250px;
+      margin-top: 1rem;
       border-radius: 20px;
     }
     .products {
-      padding: 2rem;
+      padding: 1rem;
       text-align: center;
     }
     .product-cards {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1.5rem;
-      margin-top: 2rem;
+      gap: 1rem;
     }
     .card {
       background: white;
       padding: 1rem;
       border-radius: 20px;
-      width: 250px;
+      width: 200px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     .card img {
@@ -87,28 +88,31 @@
       border-radius: 15px;
     }
     .card h3 {
-      margin: 0.8rem 0 0.3rem;
+      margin: 0.5rem 0 0.3rem;
       color: #c2185b;
+      font-size: 1.2rem;
     }
     .card .price {
       font-weight: bold;
+      font-size: 1rem;
     }
     .big-cake {
       background: #fff6f8;
-      padding: 3rem 2rem;
+      padding: 2rem 1rem;
       text-align: center;
     }
     .big-cake img {
-      width: 300px;
+      width: 70%;
+      max-width: 200px;
       border-radius: 25px;
     }
     .toast {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
+      bottom: 15px;
+      right: 15px;
       background-color: #c2185b;
       color: white;
-      padding: 15px 25px;
+      padding: 10px 20px;
       border-radius: 10px;
       opacity: 0;
       transition: opacity 0.5s ease-in-out;
@@ -117,33 +121,24 @@
     .toast.show {
       opacity: 1;
     }
+
     @media (max-width: 768px) {
-      body {
-        font-size: 16px;
-      }
-
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem;
-      }
-
       header h1 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
       }
 
       nav a {
-        margin: 0.5rem 0;
+        margin: 0.3rem 0;
+        font-size: 0.8rem;
       }
 
-      .hero {
-        flex-direction: column;
-        text-align: center;
+      .hero-text h2 {
+        font-size: 1.8rem;
       }
 
       .hero img {
-        width: 250px;
-        margin-top: 1rem;
+        width: 70%;
+        max-width: 200px;
       }
 
       .products {
@@ -153,22 +148,22 @@
       .product-cards {
         flex-direction: column;
         gap: 1rem;
-        margin-top: 2rem;
       }
 
       .card {
         width: 100%;
-        max-width: 300px;
+        max-width: 250px;
       }
 
       .big-cake img {
-        width: 200px;
+        width: 60%;
+        max-width: 150px;
       }
 
       .toast {
         bottom: 10px;
         right: 10px;
-        padding: 12px 20px;
+        padding: 8px 15px;
       }
     }
   </style>
