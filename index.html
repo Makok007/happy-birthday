@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>สุขสันต์วันเกิดที่รัก</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Prompt', sans-serif;
+      background-color: #fff0f5;
+      color: #3d3d3d;
+      scroll-behavior: smooth;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    header h1 {
+      color: #c2185b;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: #c2185b;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 2rem;
+      background: #ffe4ec;
+      border-bottom: 8px solid #ffccd5;
+      flex-wrap: wrap;
+    }
+    .hero-text {
+      max-width: 500px;
+    }
+    .hero-text h2 {
+      font-size: 2.5rem;
+      color: #c2185b;
+    }
+    .btn {
+      background-color: #c2185b;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background-color: #a3154c;
+    }
+    .hero img {
+      width: 300px;
+      border-radius: 20px;
+    }
+    .products {
+      padding: 2rem;
+      text-align: center;
+    }
+    .product-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 20px;
+      width: 250px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 15px;
+    }
+    .card h3 {
+      margin: 0.8rem 0 0.3rem;
+      color: #c2185b;
+    }
+    .card .price {
+      font-weight: bold;
+    }
+    .big-cake {
+      background: #fff6f8;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .big-cake img {
+      width: 300px;
+      border-radius: 25px;
+    }
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #c2185b;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 10px;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      z-index: 1000;
+    }
+    .toast.show {
+      opacity: 1;
+    }
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>สุขสันต์วันเกิด ❤️</h1>
+    <nav>
+      <a onclick="scrollToSection('hero')">หน้าแรก</a>
+      <a onclick="scrollToSection('products')">ของขวัญ</a>
+      <a onclick="alert('รักเตงที่สุดในโลกเลย 🥰')">บอกความรู้สึก</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="hero">
+    <div class="hero-text">
+      <h2>สุขสันต์วันเกิดนะคนดี 🎂</h2>
+      <p>ขอบคุณที่อยู่เคียงข้างกันเสมอ หวังว่าวันนี้จะเต็มไปด้วยรอยยิ้ม ความสุข และเค้กอร่อย ๆ!</p>
+      <button class="btn" onclick="scrollToSection('products')">ไปดูของขวัญกัน 💝</button>
+    </div>
+    <img src="img/cake1.png" alt="เค้กน่ารัก">
+  </section>
+
+  <section class="products" id="products">
+    <h2>เค้กวันเกิดแสนหวาน 🍓</h2>
+    <div class="product-cards">
+      <div class="card">
+        <img src="img/cake4.png" alt="cake 1">
+        <h3>เค้กฟรุ้ตตี้</h3>
+        <p class="price">แค่เห็นก็หิวแล้ว!</p>
+        <button class="btn" onclick="addToCart('เค้กฟรุ้ตตี้')">เลือกอันนี้</button>
+      </div>
+      <div class="card">
+        <img src="img/cake2.png" alt="cake 2">
+        <h3>เค้กโยเกิร์ตเบอร์รี่</h3>
+        <p class="price">หอมหวานเบา ๆ</p>
+        <button class="btn" onclick="addToCart('เค้กโยเกิร์ตเบอร์รี่')">เลือกอันนี้</button>
+      </div>
+      <div class="card">
+        <img src="img/cake3.png" alt="cake 3">
+        <h3>เค้กสายสุขภาพ</h3>
+        <p class="price">ทั้งอร่อย ทั้งดีต่อใจ</p>
+        <button class="btn" onclick="addToCart('เค้กสายสุขภาพ')">เลือกอันนี้</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="big-cake">
+    <h2>ความลับของความอร่อย ❤️</h2>
+    <img src="img/bae.jpg" alt="natural cake">
+    <div style="margin-top: 1rem;">
+      <button class="btn" onclick="alert('คือเตงไงล่ะ ที่ทำให้ทุกวันมันพิเศษ!')">ดูความลับ</button>
+    </div>
+  </section>
+
+  <div class="toast" id="toast">เพิ่มเข้าในหัวใจแล้ว! 💘</div>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function addToCart(productName) {
+      const toast = document.getElementById('toast');
+      toast.textContent = `${productName} เพิ่มเข้าในหัวใจแล้ว! 💘`;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
